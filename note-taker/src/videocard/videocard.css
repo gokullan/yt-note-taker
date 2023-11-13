@@ -1,0 +1,12 @@
+.card-wrap {
+    display: flex;
+}
+
+.thumbnail {
+    flex: 0 0 35%;
+}
+
+.description {
+    padding: 20px;
+    flex: 0 0 65%;
+}

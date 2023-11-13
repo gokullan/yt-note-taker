@@ -1,0 +1,19 @@
+{
+  "name": "image-service",
+  "version": "1.0.0",
+  "description": "A service that uploads images to GCP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^7.0.1",
+    "@hapi/hapi": "^21.3.2",
+    "amqplib": "^0.10.3",
+    "nodemon": "^3.0.1",
+    "pg": "^8.11.3"
+  }
+}

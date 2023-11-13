@@ -1,0 +1,21 @@
+.Login {
+    width: 30%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#username, #password {
+    padding: 20px;
+    margin: 20px;
+    font-family: "Modern Latin";
+}
+
+#login-button {
+    width: fit-content;
+    margin: 20px auto;
+}
+
+/* label {
+    text-align: center;
+} */
