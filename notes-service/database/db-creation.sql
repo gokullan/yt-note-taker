@@ -1,3 +1,9 @@
+/*
+CREATE USER notetaker_admin WITH PASSWORD 'something';
+CREATE DATABASE notetaker;
+GRANT ALL PRIVILEGES ON DATABASE notetaker TO notetaker_admin;
+*/
+
 DROP TABLE IF EXISTS notes;
 DROP TABLE IF EXISTS video_list;
 DROP TABLE IF EXISTS users;

@@ -41,7 +41,7 @@ const options = {
 
     await server.register({
         plugin: require('@hapi/good'),
-        options,
+        // options,
     });
 
     // jwt config
