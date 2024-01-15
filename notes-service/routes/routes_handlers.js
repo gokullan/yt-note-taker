@@ -1,6 +1,6 @@
 const db = require('../database/db');
 const rmq = require('../send.js');
-const api_key = "AIzaSyA6T9rtYjW2tEd_YvIEhcpzjGTUyc9jCc0";
+const api_key = "YOUR_API_KEY";
 const redis = require("redis");
 
 let redisClient;
