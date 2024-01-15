@@ -13,25 +13,42 @@ module.exports = function(server) {
         method: 'GET',
         path: '/notes/{youtubeID}',
         handler: handlers.youtubeInfo,
+        options: {
+          description: "Returns the thumbnail-URL and title of provided YouTube-video ID",
+          tags: ["api"]
+        }
     });
 
     server.route({
         method: 'GET',
         path: '/notes/{username}/list',
         handler: handlers.list,
-        config: { auth: 'jwt' },
+        // config: { auth: 'jwt' },
+        options: {
+          auth: "jwt",
+          description: "Returns list of videos associated with the user",
+          tags: ["api"]
+        }
     });
 
     server.route({
         method: 'POST',
         path: '/notes/{username}/new',
         handler: handlers.new,
+        options: {
+          description: "Creates a new video-entry for the user",
+          tags: ["api"]
+        }
     })
 
     server.route({
         method: 'POST',
         path: '/notes/video/fetch',
         handler: handlers.fetch,
+        options: {
+          description: "Get all associated notes with the video",
+          tags: ["api"]
+        }
     })
 
     server.route({
@@ -42,7 +59,9 @@ module.exports = function(server) {
             payload: {
                 multipart: true,
                 maxBytes: 2000000,
-            }
+            },
+            tags: ["api"],
+            description: "Save given note"
         }
     })
 
@@ -50,12 +69,20 @@ module.exports = function(server) {
         method: 'POST',
         path: '/notes/video/update',
         handler: handlers.update,
+        options: {
+          description: "Update given note",
+          tags: ["api"]
+        }
     })
 
     server.route({
         method: 'POST',
         path: '/notes/video/delete',
         handler: handlers.delete,
+        options: {
+          description: "Delete given note",
+          tags: ["api"]
+        }
     })
 
     server.route({
@@ -81,7 +108,11 @@ module.exports = function(server) {
                 "/home/gmo-gokulas/Documents/video-note-taker/notes-service/hello_world.pdf",
                 {mode: "attachment"}
             );
-        }   
+        },
+        options: {
+          description: "Download notes in the form of a pdf",
+          tags: ["api"]
+        }
     })
 
     server.route({

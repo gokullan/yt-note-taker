@@ -1,4 +1,7 @@
 const Hapi = require('@hapi/hapi');
+const Inert = require('@hapi/inert');
+const Vision = require('@hapi/vision');
+const HapiSwagger = require('hapi-swagger');
 const routes = require('./routes/routes');
 const winston = require('winston');
 const goodWinston = require('hapi-good-winston').goodWinston;
@@ -29,6 +32,12 @@ const options = {
         winstonWithLogLevels: [goodWinston(logger, goodWinstonOptions)],
     }
 };
+const swaggerOptions = {
+    info: {
+            title: 'Text Notes API Documentation',
+            version: '1.1',
+    }
+};
 
 (async () => {
     const server = Hapi.Server({
@@ -39,10 +48,26 @@ const options = {
         }
     });
 
-    await server.register({
-        plugin: require('@hapi/good'),
-        // options,
-    });
+    // await server.register({
+    //     plugin: require('@hapi/good'),
+    //     // options,
+    // });
+  
+    const swaggerOptions = {
+        info: {
+                title: 'Test API Documentation',
+                version: '1.1',
+            },
+        };
+
+    await server.register([
+        Inert,
+        Vision,
+        {
+            plugin: HapiSwagger,
+            options: swaggerOptions
+        }
+    ]);
 
     // jwt config
     await server.register(hapiAuthJWT);
