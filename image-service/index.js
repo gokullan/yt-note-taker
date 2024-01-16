@@ -1,6 +1,7 @@
 const Hapi = require('@hapi/hapi');
 const db = require('./database/db');
 const uploadImage = require('./helpers/helper').uploadImage;
+const saveImageLocal = require('./helpers/helper').saveImageLocal;
 
 (async () => {
     const server = Hapi.Server({
@@ -21,7 +22,8 @@ const uploadImage = require('./helpers/helper').uploadImage;
                     "SELECT * FROM image64 WHERE note_id = $1",
                     [request.payload.noteId]
                 )).rows[0]['base64_code'];
-                const url = await uploadImage(`${request.payload.noteId}.png`, base64);
+                // const url = await uploadImage(`${request.payload.noteId}.png`, base64);
+                const url = await saveImageLocal(`${request.payload.noteId}.png`, base64);
                 console.log(`Image uploaded at ${url}`);
                 return url;
             }
