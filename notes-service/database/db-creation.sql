@@ -37,5 +37,6 @@ CREATE TABLE notes (
 	note_id UUID DEFAULT uuid_generate_v4 () PRIMARY KEY,
 	video_id UUID REFERENCES video_list(video_id),
 	timestamp_ TIME,
-	note_ VARCHAR (500)
+	note_ TEXT,
+        img_url VARCHAR(100)
 );

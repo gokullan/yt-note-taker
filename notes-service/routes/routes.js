@@ -105,7 +105,7 @@ module.exports = function(server) {
             await createFile(request.payload.videoId);
             console.log("Done");
             return h.file(
-                "/home/gmo-gokulas/Documents/video-note-taker/notes-service/hello_world.pdf",
+                "/home/gokulakrishnans/yt-note-taker/notes-service/hello_world.pdf",
                 {mode: "attachment"}
             );
         },
