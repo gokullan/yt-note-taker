@@ -1,10 +1,11 @@
 const pg = require("pg");
+const config = require("../../config.json");
 
 const pool = new pg.Pool({
-    host: 'localhost',
-    user: 'notetaker_admin',
-    password: 'sS@It^39',
-    database: 'notetaker',
+    host: config.notes_service.db.host,
+    user: config.notes_service.db.user,
+    password: config.notes_service.db.password,
+    database: config.notes_service.db.database,
 })
 
 exports.query = (text, params, callback) => {

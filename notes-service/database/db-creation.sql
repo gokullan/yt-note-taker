@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS notes;
 DROP TABLE IF EXISTS video_list;
 DROP TABLE IF EXISTS users;
 
-/* users */
+/* users - this refers to the list of users who can access the application */
 CREATE TABLE users (
 	user_id UUID DEFAULT uuid_generate_v4 () PRIMARY KEY,
 	username VARCHAR (50) UNIQUE NOT NULL,
@@ -19,8 +19,8 @@ INSERT INTO users (
 	password
 )
 VALUES (
-	'gokula.s',
-	'samsung'
+	'username',
+	'password'
 );
 
 /* `video_list` */
