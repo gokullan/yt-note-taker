@@ -34,12 +34,13 @@ npm run start
 ```
 ### DB-setup
 - Create the DB in Postgres
-  - The DB connection string can be found at `notes-service/database/db.js` -
-    Modify as required
+  - &#x2757; Modify the connection details in `config.json` (located at the root of this
+    application) - the credentials will be read from this file when connecting
+    to the DB
 - Execute the script at `notes-service/database/db-creation.sql`
   - The DB contains only 3 tables and comments have been included in this script
     for the description of each table.
-  - Caution: The script also includes some DROP commands. To ensure that there
+  - &#x2757; Caution: The script also includes some DROP commands. To ensure that there
     is no unintended deletion, create a separate DB for this service.
 
 ## `note-taker` 
@@ -62,3 +63,5 @@ npm run start
   - When the application was initially images were saved to cloud rather than
     the local file system. So queuing made more sense in that context.
 ### How images are actually saved
+
+### === README IN PROGRESS ===
