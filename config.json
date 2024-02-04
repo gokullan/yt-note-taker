@@ -1,0 +1,18 @@
+{
+  "notes_service": {
+    "db": {
+      "host": "localhost",
+      "database": "notetaker",
+      "user": "notetaker_admin",
+      "password": "***"
+    }
+  },
+  "image_service": {
+    "db": {
+      "host": "localhost",
+      "database": "notetaker",
+      "user": "notetaker_admin",
+      "password": "***"
+    }
+  }
+}
